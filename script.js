@@ -1,7 +1,6 @@
 /* Exercise 1: Wish list */
 function addToList(cosita) {
-    $('#items').append('<li>' + cosita + '</li>');
-    $('#items').append('<span class="label pending">Pending</span>');
+    $('#items').append('<li>' + cosita + '<span class="label pending">Pending</span>' + '</li>');
     updateTotal();
 }
 
@@ -19,7 +18,7 @@ $(document).on('click', '#add-to-list', function() {
 $(document).on('click', '.label.pending', function() {
     var li_node = $(this).parent();
     $(this).remove();
-    //$(this).addClass('completed');
+    li_node.addClass('completed');
     li_node.append('<span class="label success">Done!</span>');
     updateTotal();
 });
