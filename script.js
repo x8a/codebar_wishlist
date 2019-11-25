@@ -21,7 +21,7 @@ $(document).on('keydown', '#item', function (e) {
         addToList($('#item').val());
         $('#item').focus().val('');
     }
-   })
+   });
 
 $(document).on('click', '.label.pending', function() {
     var li_node = $(this).parent();
