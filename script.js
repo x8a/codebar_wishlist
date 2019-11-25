@@ -15,6 +15,14 @@ $(document).on('click', '#add-to-list', function() {
     $('#item').focus().val('');
 });
 
+$(document).on('keydown', '#item', function (e) {
+    var key = e.which;
+    if (key == 13) {
+        addToList($('#item').val());
+        $('#item').focus().val('');
+    }
+   })
+
 $(document).on('click', '.label.pending', function() {
     var li_node = $(this).parent();
     $(this).remove();
